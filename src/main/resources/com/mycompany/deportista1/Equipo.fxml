@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.deportista1.Equipo">
+   <children>
+      <SplitPane dividerPositions="0.421875" layoutX="200.0" layoutY="142.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="387.0">
+               <children>
+                  <GridPane layoutX="2.0" layoutY="14.0" prefHeight="210.0" prefWidth="472.0">
+                     <children>
+                        <Label text="Nombre:">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Pais:" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <TextField prefHeight="7.0" prefWidth="207.0" GridPane.columnIndex="1" />
+                        <TextField prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <HBox layoutX="42.0" layoutY="474.0" prefHeight="100.0" prefWidth="430.0" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Guardar" />
+                        <Button mnemonicParsing="false" text="Actualizar" />
+                        <Button mnemonicParsing="false" text="Eliminar" />
+                        <Button mnemonicParsing="false" text="Nuevo" />
+                        <Button mnemonicParsing="false" onAction="#switchToPrimary" text="volver" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="664.0">
+               <children>
+                  <TableView layoutX="247.0" layoutY="70.0" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn prefWidth="148.0" text="Nombre" />
+                        <TableColumn prefWidth="120.0" text="Pais" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
