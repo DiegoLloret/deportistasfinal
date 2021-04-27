@@ -19,12 +19,12 @@
                      <menus>
                         <Menu mnemonicParsing="false" text="Deportistas">
                            <items>
-                              <MenuItem mnemonicParsing="false" onAction="#switchToSecondary" text="ir" />
+                              <MenuItem fx:id="btnir" mnemonicParsing="false" onAction="#switchToSecondary" text="ir" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Equipos">
                            <items>
-                              <MenuItem mnemonicParsing="false" onAction="#switchToEquipo" text="ir" />
+                              <MenuItem fx:id="btnir1" mnemonicParsing="false" onAction="#switchToEquipo" text="ir" />
                            </items>
                         </Menu>
                      </menus>
