@@ -14,6 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
 
 /**
  *
@@ -46,4 +49,27 @@ public class DeportistaDAO {
         }
         return deportistas;
     } 
+    public TableView<Deportista> verDeportistas()throws SQLException{
+        TableView<Deportista> tvdeportistas =new TableView<>();
+        ObservableList<Deportista> oldeportistas=FXCollections.observableArrayList();
+        String sql ="select deportista.nombre,deportista.fecha_nacimiento,deportista.altura,deportista.nacionalidad,deportista.dorsal,deportes.nombre,equipos.nombre from deportista inner join deportes on deportista.deporte_jugado=deportes.id_deporte inner join  equipos on equipos.id_equipos=deportista.equipo;";
+        PreparedStatement sentencia =conn.prepareStatement(sql);
+        ResultSet resultado= sentencia.executeQuery();
+        while (resultado.next()){
+            Deportista d = new Deportista();
+            d.setNombre(resultado.getString(1));
+            d.setFecha_nacimiento(resultado.getDate(2));
+            d.setAltura(resultado.getInt(3));
+            d.setNacionalidad(resultado.getString(4));
+            d.setDorsal(resultado.getInt(5));
+            d.setDeporte_jugado(resultado.getString(6));
+            d.setEquipo(resultado.getString(7));
+            System.out.println("d: "+d.getNombre());
+            oldeportistas.add(d);
+        }
+        tvdeportistas.setItems(oldeportistas);
+        
+        return tvdeportistas;
+    }
+    
 }

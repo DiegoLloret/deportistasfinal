@@ -80,7 +80,7 @@
                   <HBox layoutX="42.0" layoutY="474.0" prefHeight="100.0" prefWidth="430.0" spacing="5.0">
                      <children>
                         <Button mnemonicParsing="false" text="Guardar" />
-                        <Button mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="actualizar" mnemonicParsing="false" onAction="#showDeportista" text="Actualizar" />
                         <Button mnemonicParsing="false" text="Eliminar" />
                         <Button mnemonicParsing="false" text="Nuevo" />
                         <Button fx:id="volver" mnemonicParsing="false" onAction="#switchToPrimary" text="volver" />
@@ -92,13 +92,13 @@
                <children>
                   <TableView fx:id="tvdeportista" layoutX="247.0" layoutY="70.0" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
-                        <TableColumn prefWidth="148.0" text="Nombre" />
-                        <TableColumn prefWidth="121.0" text="Fecha de nacimiento" />
-                        <TableColumn prefWidth="40.0" text="Altura" />
-                        <TableColumn prefWidth="120.0" text="Nacionalidad" />
-                        <TableColumn prefWidth="41.0" text="Dorsal" />
-                        <TableColumn prefWidth="73.0" text="Deporte" />
-                        <TableColumn prefWidth="82.0" text="Equipo" />
+                        <TableColumn fx:id="colNombre" prefWidth="148.0" text="Nombre" />
+                        <TableColumn fx:id="colFecha" prefWidth="121.0" text="Fecha de nacimiento" />
+                        <TableColumn fx:id="colAltura" prefWidth="40.0" text="Altura" />
+                        <TableColumn fx:id="colNacionalidad" prefWidth="120.0" text="Nacionalidad" />
+                        <TableColumn fx:id="colDorsal" prefWidth="41.0" text="Dorsal" />
+                        <TableColumn fx:id="colDeporte" prefWidth="73.0" text="Deporte" />
+                        <TableColumn fx:id="colEquipo" prefWidth="82.0" text="Equipo" />
                      </columns>
                   </TableView>
                </children>
