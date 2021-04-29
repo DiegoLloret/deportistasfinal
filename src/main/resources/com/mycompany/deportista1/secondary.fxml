@@ -90,7 +90,7 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="664.0">
                <children>
-                  <TableView fx:id="tvdeportista" layoutX="247.0" layoutY="70.0" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tvdeportista1" layoutY="7.0" prefHeight="629.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
                         <TableColumn fx:id="colNombre" prefWidth="148.0" text="Nombre" />
                         <TableColumn fx:id="colFecha" prefWidth="121.0" text="Fecha de nacimiento" />

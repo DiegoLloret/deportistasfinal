@@ -6,25 +6,32 @@
 package com.mycompany.models;
 
 import java.sql.Date;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
  * @author Diego
  */
 public abstract class Persona {
-     String nombre;
-     String nacionalidad;
-     Date fecha_nacimiento;
-     int altura;
+    
+     StringProperty nombre;
+     StringProperty nacionalidad;
+     ObjectProperty<Date> fecha_nacimiento;
+     IntegerProperty altura;
 
     public Persona() {
     }
 
     public Persona(String nombre, String nacionalidad, Date fecha_nacimiento, int altura) {
-        this.nombre = nombre;
-        this.nacionalidad = nacionalidad;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.altura = altura;
+        this.nombre = new SimpleStringProperty("nombre");
+        this.nacionalidad = new SimpleStringProperty("nacionalidad");
+        this.fecha_nacimiento = new SimpleObjectProperty<>(fecha_nacimiento);
+        this.altura =  new SimpleIntegerProperty(altura);
     }
 
     /**
