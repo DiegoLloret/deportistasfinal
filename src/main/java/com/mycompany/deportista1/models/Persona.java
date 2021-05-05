@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.models;
+package com.mycompany.deportista1.models;
 
 import java.sql.Date;
 import javafx.beans.property.IntegerProperty;
@@ -19,17 +19,17 @@ import javafx.beans.property.StringProperty;
  */
 public abstract class Persona {
     
-     StringProperty nombre;
-     StringProperty nacionalidad;
-     ObjectProperty<Date> fecha_nacimiento;
-     IntegerProperty altura;
+     private StringProperty nombre;
+     private StringProperty nacionalidad;
+     private ObjectProperty<Date> fecha_nacimiento;
+     private IntegerProperty altura;
 
     public Persona() {
     }
 
     public Persona(String nombre, String nacionalidad, Date fecha_nacimiento, int altura) {
-        this.nombre = new SimpleStringProperty("nombre");
-        this.nacionalidad = new SimpleStringProperty("nacionalidad");
+        this.nombre = new SimpleStringProperty(nombre);
+        this.nacionalidad = new SimpleStringProperty(nacionalidad);
         this.fecha_nacimiento = new SimpleObjectProperty<>(fecha_nacimiento);
         this.altura =  new SimpleIntegerProperty(altura);
     }
@@ -37,43 +37,60 @@ public abstract class Persona {
     /**
      * @return the nombre
      */
-    public abstract String getNombre();
-       
+    public String getNombre() {
+        return  nombre.get();
+    }
 
     /**
      * @param nombre the nombre to set
      */
-    public abstract void setNombre(String nombre);
+    public void setNombre(String nombre) {
+         this.nombre.set(nombre);
+    }
 
     /**
      * @return the nacionalidad
      */
-    public abstract String getNacionalidad();
+    public String getNacionalidad() {
+        return nacionalidad.get();
+    }
 
     /**
      * @param nacionalidad the nacionalidad to set
      */
-    public abstract void setNacionalidad(String nacionalidad);
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad.set(nacionalidad);
+    }
 
     /**
      * @return the fecha_nacimiento
      */
-    public abstract Date getFecha_nacimiento();
+    public Date getFecha_nacimiento() {
+        return fecha_nacimiento.get();
+    }
 
     /**
      * @param fecha_nacimiento the fecha_nacimiento to set
      */
-    public abstract void setFecha_nacimiento(Date fecha_nacimiento);
+    public void setFecha_nacimiento(ObjectProperty<Date> fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
 
     /**
      * @return the altura
      */
-    public abstract int getAltura();
+    public int getAltura() {
+        return altura.get();
+    }
 
     /**
      * @param altura the altura to set
      */
-    public abstract void setAltura(int altura);
+    public void setAltura(IntegerProperty altura) {
+        this.altura = altura;
+    }
+
+     public abstract String toString();
 
     
 }

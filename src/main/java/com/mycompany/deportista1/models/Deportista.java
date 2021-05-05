@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.models;
+package com.mycompany.deportista1.models;
 
 import java.sql.Date;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -17,72 +15,21 @@ import javafx.beans.property.StringProperty;
  *
  * @author Diego
  */
-public class Deportista {
-      private final StringProperty nombre;
-      private final ObjectProperty<Date> fecha_nacimiento;
-      private final IntegerProperty altura;
-      private final StringProperty nacionalidad;
+public class Deportista extends Persona{
+    
      
      private IntegerProperty dorsal;
      private StringProperty deporte_jugado;
      private StringProperty equipo;
 
-   
+    public Deportista(){}
 
     public Deportista( String nombre,Date fecha_nacimiento,int altura,String nacionalidad,int dorsal, String deporte_jugado, String equipo) {
-       
-         this.nombre = new SimpleStringProperty(nombre);
-         
-       this.fecha_nacimiento = new SimpleObjectProperty<>(fecha_nacimiento);
-        this.altura =  new SimpleIntegerProperty(altura);
-        this.nacionalidad = new SimpleStringProperty(nacionalidad); 
-       
+                   super(nombre,nacionalidad,fecha_nacimiento,altura);
         this.dorsal =new SimpleIntegerProperty(dorsal);
         this.deporte_jugado = new SimpleStringProperty(deporte_jugado);
         this.equipo =  new SimpleStringProperty(equipo);
     }
-    
-    
-    public String getNombre() {
-         return nombre.get();
-    }
-
-    
-    public void setNombre(String nombre) {
-             this.nombre.set(nombre);
-      
-    }
-
-    
-    public String getNacionalidad() {
-        return nacionalidad.get();
-    }
-
-    
-    public void setNacionalidad(String nacionalidad) {
-       this.nacionalidad.set(nacionalidad);
-    }
-
-    
-    public Date getFecha_nacimiento() {
-      return fecha_nacimiento.get();
-    }
-
-    
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento.set(fecha_nacimiento);
-    }
-
-    
-    public int getAltura() {
-        return altura.get();
-    }
-
-    
-    public void setAltura(int altura) {
-        this.altura.set(altura);
-    }
-
     /**
      * @return the dorsal
      */
@@ -125,11 +72,14 @@ public class Deportista {
         this.equipo.set(equipo); 
     }
     
-    
-    public String toString1()
+     @Override
+    public String toString()
     {
         
-       return this.getNombre()+this.getFecha_nacimiento()+this.getAltura()+this.getNacionalidad()+this.getDorsal()+this.getDeporte_jugado()+this.getEquipo();
+       return ""+getNombre()+getFecha_nacimiento()+getNacionalidad()+getAltura()+getDorsal()+getDeporte_jugado()+getEquipo();
+      
     }
-    
+
+   
+   
 }

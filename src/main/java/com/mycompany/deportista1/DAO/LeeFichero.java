@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.DAO;
+package com.mycompany.deportista1.DAO;
 
 /**
  *
@@ -11,7 +11,7 @@ package com.mycompany.DAO;
  */
 import java.io.*;
 
-class LeeFichero {
+public class LeeFichero {
    public static void main(String [] arg) {
        LeeFichero a=new LeeFichero();
        

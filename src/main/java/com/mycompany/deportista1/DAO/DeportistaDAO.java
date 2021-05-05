@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.DAO;
+package com.mycompany.deportista1.DAO;
 
-import com.mycompany.models.Deportista;
+import com.mycompany.deportista1.models.Deportista;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -63,7 +64,15 @@ public class DeportistaDAO {
             resultado.getInt(5),
             resultado.getString(6),
             resultado.getString(7));
-            System.out.println("d: "+d.toString1());
+         /*  Deportista d = new Deportista();
+            d.setNombre(new SimpleStringProperty(resultado.getString(1)));
+            d.setFecha_nacimiento(new SimpleObjectProperty<>(resultado.getDate(2)));
+            d.setAltura(new SimpleIntegerProperty(resultado.getInt(3)));
+            d.setNacionalidad(new SimpleStringProperty(resultado.getString(4)));
+            d.setDorsal(resultado.getInt(5));
+            d.setDeporte_jugado (resultado.getString(6));
+            d.setEquipo(resultado.getString(7));*/
+            System.out.println("d: "+d.toString());
             oldeportistas.add(d);
         }
        // tvdeportistas.setItems(oldeportistas);
@@ -71,5 +80,18 @@ public class DeportistaDAO {
         //return tvdeportistas;
        // return oldeportistas;
     }
-    
+    public void insertarDeportista(String nombre,Date fecha,int altura,String nacionalidad,int dorsal,String deporte,String equipo) throws SQLException{
+          String sql ="call deportistas.InsertarDeportista('"+nombre+"','"+fecha+"',"+altura+
+                ",'"+nacionalidad+"',"+dorsal+",'"+deporte+"','"+equipo+"');";
+           System.out.println(sql);
+        PreparedStatement sentencia =conn.prepareStatement(sql);
+        ResultSet resultado= sentencia.executeQuery();
+       
+    }
+    public void deleteDeportista (String nombre) throws SQLException{
+        String sql=" delete from deportista where nombre='"+nombre+"';";
+        System.out.println(sql);
+        PreparedStatement sentencia =conn.prepareStatement(sql);
+        ResultSet resultado= sentencia.executeQuery();
+    }
 }
