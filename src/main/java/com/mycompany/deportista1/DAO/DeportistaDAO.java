@@ -5,6 +5,7 @@
  */
 package com.mycompany.deportista1.DAO;
 
+import com.mycompany.deportista1.DAO.LeeFichero;
 import com.mycompany.deportista1.models.Deportista;
 import java.io.IOException;
 import java.sql.Connection;
@@ -90,6 +91,13 @@ public class DeportistaDAO {
     }
     public void deleteDeportista (String nombre) throws SQLException{
         String sql=" delete from deportista where nombre='"+nombre+"';";
+        System.out.println(sql);
+        PreparedStatement sentencia =conn.prepareStatement(sql);
+        ResultSet resultado= sentencia.executeQuery();
+    }
+    public void modificarDeportista(String nombre,Date fecha,int altura,String nacionalidad,int dorsal,String deporte,String equipo) throws SQLException{
+        String sql ="call deportistas.ModificarDeportista('"+nombre+"','"+fecha+"',"+altura+
+                ",'"+nacionalidad+"',"+dorsal+",'"+deporte+"','"+equipo+"');";
         System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
         ResultSet resultado= sentencia.executeQuery();

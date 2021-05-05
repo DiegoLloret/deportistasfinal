@@ -25,8 +25,8 @@
                               <Insets left="5.0" />
                            </padding>
                         </Label>
-                        <TextField prefHeight="7.0" prefWidth="207.0" GridPane.columnIndex="1" />
-                        <TextField prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="fldNombre" prefHeight="7.0" prefWidth="207.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="fldPais" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,21 +39,21 @@
                   </GridPane>
                   <HBox layoutX="42.0" layoutY="474.0" prefHeight="100.0" prefWidth="430.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Guardar" />
-                        <Button mnemonicParsing="false" text="Actualizar" />
-                        <Button mnemonicParsing="false" text="Eliminar" />
-                        <Button mnemonicParsing="false" text="Nuevo" />
-                        <Button mnemonicParsing="false" onAction="#switchToPrimary" text="volver" />
+                        <Button fx:id="modificar" mnemonicParsing="false" text="Modificar" />
+                        <Button fx:id="actualizar" mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="eliminar" mnemonicParsing="false" text="Eliminar" />
+                        <Button fx:id="nuevo" mnemonicParsing="false" text="Nuevo" />
+                        <Button fx:id="volver" mnemonicParsing="false" onAction="#switchToPrimary" text="volver" />
                      </children>
                   </HBox>
                </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="664.0">
                <children>
-                  <TableView layoutX="247.0" layoutY="70.0" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tvequipo1" layoutX="247.0" layoutY="70.0" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
-                        <TableColumn prefWidth="148.0" text="Nombre" />
-                        <TableColumn prefWidth="120.0" text="Pais" />
+                        <TableColumn fx:id="colNombre" prefWidth="148.0" text="Nombre" />
+                        <TableColumn fx:id="colPais" prefWidth="120.0" text="Pais" />
                      </columns>
                   </TableView>
                </children>

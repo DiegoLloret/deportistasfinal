@@ -43,6 +43,8 @@ public class SecondaryController {
     private Button actualizar;
     @FXML
     private Button eliminar;
+       @FXML
+    private Button modificar;
     @FXML
     private TableColumn<Deportista,String> colNombre;
     @FXML
@@ -148,4 +150,52 @@ public class SecondaryController {
             
         }
     }
-}
+  @FXML
+    private void  modificarDeportista()throws IOException, SQLException {
+       DeportistaDAO adao =new DeportistaDAO();
+        if(tvdeportista1.getSelectionModel().isEmpty()||
+                (fldNombre.getText().isEmpty()||fldNacionalidad.getText().isEmpty()|| fldDorsal.getText().isEmpty()|| fldEquipo.getText().isEmpty()||fldDeporte.getText().isEmpty()||fldAltura.getText().isEmpty())){
+           AlertsUtil.mostrarError("Rellena todos los campos y selecciona un deportista");
+    }else{
+          String nombre= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNombre();
+           Date fecha= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getFecha_nacimiento();
+           int altura= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getAltura();
+           String nacionalidad= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNacionalidad();
+           int dorsal= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getDorsal();
+           String deporte= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getDeporte_jugado();
+            String equipo= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getEquipo();
+          if(!fldNombre.getText().isEmpty()){
+              nombre=fldNombre.getText();
+          }
+          if(!fldAltura.getText().isEmpty()){
+              altura=Integer.parseInt(fldAltura.getText());
+          }
+           if(!fldNacionalidad.getText().isEmpty()){
+              nacionalidad=fldNacionalidad.getText();
+          }
+          if(!fldDorsal.getText().isEmpty()){
+              dorsal=Integer.parseInt(fldDorsal.getText());
+          }
+          if(!fldDeporte.getText().isEmpty()){
+              deporte=fldDeporte.getText();
+          }
+          if(!fldEquipo.getText().isEmpty()){
+              equipo=fldEquipo.getText();
+          }
+          
+            try{
+                 adao.conectar();
+           adao.modificarDeportista(fldNombre.getText(),Date.valueOf(fldFecha.getValue()),Integer.parseInt(fldAltura.getText()),fldNacionalidad.getText(),Integer.parseInt(fldDorsal.getText()),fldDeporte.getText(),fldEquipo.getText());
+                oldeportistas.set(tvdeportista1.getSelectionModel().getSelectedIndex(),
+                     new Deportista(nombre,fecha,altura,nacionalidad,dorsal,deporte,equipo));
+      
+          }catch (ClassNotFoundException ex) {
+             AlertsUtil.mostrarError(ex.getMessage());
+        } catch (SQLException ex) {
+             AlertsUtil.mostrarError(ex.getMessage());
+        }
+ 
+           }
+        } 
+    }
+

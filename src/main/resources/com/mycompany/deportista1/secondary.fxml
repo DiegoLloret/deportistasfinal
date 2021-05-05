@@ -79,7 +79,7 @@
                   </GridPane>
                   <HBox layoutX="42.0" layoutY="474.0" prefHeight="100.0" prefWidth="430.0" spacing="5.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Guardar" />
+                        <Button fx:id="modificar" mnemonicParsing="false" onAction="#modificarDeportista" text="Modificar" />
                         <Button fx:id="actualizar" mnemonicParsing="false" onAction="#showDeportista" text="Actualizar" />
                         <Button fx:id="eliminar" mnemonicParsing="false" onAction="#borrarDeportista" text="Eliminar" />
                         <Button mnemonicParsing="false" onAction="#AddDeportista" text="Nuevo" />
