@@ -27,6 +27,11 @@
                               <MenuItem fx:id="btnir1" mnemonicParsing="false" onAction="#switchToEquipo" text="ir" />
                            </items>
                         </Menu>
+                        <Menu mnemonicParsing="false" text="Deportes">
+                          <items>
+                            <MenuItem fx:id="btnir2" mnemonicParsing="false" onAction="#switchToDeporte" text="ir" />
+                          </items>
+                        </Menu>
                      </menus>
                   </MenuBar>
                </children>

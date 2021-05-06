@@ -5,9 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 
 public class PrimaryController {
- @FXML
+    @FXML
     private MenuItem btnir1;
-
+    @FXML
+    private MenuItem btnir2;
     @FXML
     private MenuItem btnir;
     @FXML
@@ -18,4 +19,8 @@ public class PrimaryController {
     private void switchToEquipo() throws IOException {
         App.setRoot("Equipo");
     }
+      @FXML
+    private void switchToDeporte() throws IOException {
+        App.setRoot("Deporte");
+}
 }

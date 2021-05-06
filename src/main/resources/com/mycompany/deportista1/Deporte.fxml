@@ -7,11 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.deportista1.Equipo1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.deportista1.DeporteController">
    <children>
       <SplitPane dividerPositions="0.421875" layoutX="200.0" layoutY="142.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <AnchorPane fx:id="modificar" minHeight="0.0" minWidth="0.0" onDragDetected="#modificarEquipo" prefHeight="629.0" prefWidth="387.0">
+            <AnchorPane fx:id="modificar" minHeight="0.0" minWidth="0.0" onDragDetected="#modificarDeporte" prefHeight="629.0" prefWidth="387.0">
                <children>
                   <GridPane layoutX="2.0" layoutY="14.0" prefHeight="210.0" prefWidth="472.0">
                      <children>
@@ -20,13 +20,13 @@
                               <Insets left="5.0" />
                            </padding>
                         </Label>
-                        <Label text="Pais:" GridPane.rowIndex="1">
+                        <Label text="TIpo:" GridPane.rowIndex="1">
                            <padding>
                               <Insets left="5.0" />
                            </padding>
                         </Label>
                         <TextField fx:id="fldNombre" prefHeight="7.0" prefWidth="207.0" GridPane.columnIndex="1" />
-                        <TextField fx:id="fldPais" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="fldTipo" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,10 +39,10 @@
                   </GridPane>
                   <HBox layoutX="42.0" layoutY="474.0" prefHeight="100.0" prefWidth="430.0" spacing="5.0">
                      <children>
-                        <Button fx:id="modificar1" mnemonicParsing="false" onAction="#modificarEquipo" text="Modificar" />
-                        <Button fx:id="actualizar" mnemonicParsing="false" onAction="#showEquipo" text="Actualizar" />
-                        <Button fx:id="eliminar" mnemonicParsing="false" onAction="#borrarEquipo" text="Eliminar" />
-                        <Button fx:id="nuevo" mnemonicParsing="false" onAction="#AddEquipo" text="Nuevo" />
+                        <Button fx:id="modificar2" mnemonicParsing="false" onAction="#modificarDeporte" text="Modificar" />
+                        <Button fx:id="actualizar" mnemonicParsing="false" onAction="#showDeporte" text="Actualizar" />
+                        <Button fx:id="eliminar" mnemonicParsing="false" onAction="#borrarDeporte" text="Eliminar" />
+                        <Button fx:id="nuevo" mnemonicParsing="false" onAction="#AddDeporte" text="Nuevo" />
                         <Button fx:id="volver" mnemonicParsing="false" onAction="#switchToPrimary" text="volver" />
                         <Button fx:id="resetear" mnemonicParsing="false" onAction="#resetear" text="resetear" />
                      </children>
@@ -51,10 +51,10 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="664.0">
                <children>
-                  <TableView fx:id="tvequipo1" layoutX="247.0" layoutY="70.0" onMouseClicked="#presionado" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tvdeporte1" layoutX="247.0" layoutY="70.0" onMouseClicked="#presionado" prefHeight="629.0" prefWidth="582.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <columns>
                         <TableColumn fx:id="colNombre" prefWidth="148.0" text="Nombre" />
-                        <TableColumn fx:id="colPais" prefWidth="120.0" text="Pais" />
+                        <TableColumn fx:id="colTipo" prefWidth="120.0" text="Tipo" />
                      </columns>
                   </TableView>
                </children>

@@ -12,17 +12,16 @@ import javafx.beans.property.StringProperty;
  *
  * @author Alumno 3
  */
-public class Equipo {
-    
+public class Deporte {
     private StringProperty nombre;
-     private StringProperty pais;
+     private StringProperty tipo;
 
-    public Equipo() {
+    public Deporte() {
     }
 
-    public Equipo(String nombre, String pais) {
+    public Deporte(String nombre, String tipo) {
         this.nombre =new SimpleStringProperty( nombre);
-        this.pais = new SimpleStringProperty(pais);
+        this.tipo = new SimpleStringProperty(tipo);
     }
 
     /**
@@ -42,21 +41,21 @@ public class Equipo {
     /**
      * @return the pais
      */
-    public String getPais() {
-        return pais.get();
+    public String getTipo() {
+        return tipo.get();
     }
 
     /**
-     * @param pais the pais to set
+     * @param tipo the pais to set
      */
-    public void setPais(String pais) {
-        this.pais.set(pais);
+    public void setTipo(String tipo) {
+        this.tipo.set(tipo);
     }
      
      public String toString()
     {
         
-       return ""+getNombre()+getPais();
+       return ""+getNombre()+getTipo();
       
     }
 }

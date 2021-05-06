@@ -202,6 +202,8 @@ public class SecondaryController {
     
     String nombre= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNombre();
     fldNombre.setText(nombre);
+    Date fecha= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getFecha_nacimiento();
+    fldFecha.setValue(fecha.toLocalDate());
     int altura= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getAltura();
     fldAltura.setText(""+altura);
     String nacionalidad= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNacionalidad();
@@ -218,6 +220,8 @@ public class SecondaryController {
    private void resetear() {
       
     fldNombre.setText("");
+    
+    
     
     fldAltura.setText("");
     

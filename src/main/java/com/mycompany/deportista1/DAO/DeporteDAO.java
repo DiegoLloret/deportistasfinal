@@ -6,7 +6,7 @@
 package com.mycompany.deportista1.DAO;
 
 import com.mycompany.deportista1.DAO.LeeFichero;
-import com.mycompany.deportista1.models.Equipo;
+import com.mycompany.deportista1.models.Deporte;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ import javafx.scene.control.TableView;
  *
  * @author Alumno 3
  */
-public class EquipoDAO {
+public class DeporteDAO {
     public Connection conn;
     public void conectar() throws ClassNotFoundException, SQLException,IOException {
      String conex= LeeFichero.leeConexion("C:/trabajo final/conexion.txt");
@@ -29,35 +29,34 @@ public class EquipoDAO {
     public void desconectar() throws SQLException{
         conn.close();
     }
-     public void  verEquipos(ObservableList<Equipo> olequipos)throws SQLException{
-        TableView<Equipo> tvequipos =new TableView<>();
-        String sql ="select equipos.nombre,equipos.pais from equipos;";
+     public void  verDeportes(ObservableList<Deporte> oldeportes)throws SQLException{
+        TableView<Deporte> tvdeportes =new TableView<>();
+        String sql ="select deportes.nombre,deportes.tipo from deportes;";
         PreparedStatement sentencia =conn.prepareStatement(sql);
         ResultSet resultado= sentencia.executeQuery();
         while (resultado.next()){
-            Equipo e = new Equipo(
+            Deporte de = new Deporte(
             resultado.getString(1),
             resultado.getString(2));
-         
-            System.out.println("e: "+e.toString());
-            olequipos.add(e);
+            System.out.println("de: "+de.toString());
+            oldeportes.add(de);
         }
 }
-      public void insertarEquipo(String nombre,String pais) throws SQLException{
-          String sql ="insert into equipos (nombre,pais) values('"+nombre+"','"+pais+"');";
+      public void insertarDeporte(String nombre,String tipo) throws SQLException{
+          String sql ="insert into deportes (nombre,tipo) values('"+nombre+"','"+tipo+"');";
            System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
         ResultSet resultado= sentencia.executeQuery();
        
     }
-      public void deleteEquipo (String nombre) throws SQLException{
-        String sql=" delete from equipos where nombre='"+nombre+"';";
+      public void deleteDeporte (String nombre) throws SQLException{
+        String sql=" delete from deportes where nombre='"+nombre+"';";
         System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
         ResultSet resultado= sentencia.executeQuery();
     }
-      public void modificarEquipo(String nombre,String pais) throws SQLException{
-        String sql ="call deportistas.ModificarEquipo('"+nombre+"','"+pais+"');";
+      public void modificarDeporte(String nombre,String tipo) throws SQLException{
+        String sql ="call deportistas.ModificarDeporte('"+nombre+"','"+tipo+"');";
         System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
         ResultSet resultado= sentencia.executeQuery();

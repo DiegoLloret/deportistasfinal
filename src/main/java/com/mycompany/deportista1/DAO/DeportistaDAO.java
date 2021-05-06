@@ -30,26 +30,7 @@ public class DeportistaDAO {
     public void desconectar() throws SQLException{
         conn.close();
     }
-    /*
-    public List<Deportista> listDeportistas() throws SQLException{
-        List<Deportista> deportistas =new ArrayList<>();
-        String sql ="select deportista.nombre,deportista.fecha_nacimiento,deportista.altura,deportista.nacionalidad,deportista.dorsal,deportes.nombre,equipos.nombre from deportista inner join deportes on deportista.deporte_jugado=deportes.id_deporte inner join  equipos on equipos.id_equipos=deportista.equipo;";
-        PreparedStatement sentencia =conn.prepareStatement(sql);
-        ResultSet resultado= sentencia.executeQuery();
-        while (resultado.next()){
-            Deportista d = new Deportista();
-            d.setNombre(resultado.getString(1));
-            d.setFecha_nacimiento(resultado.getDate(2));
-            d.setAltura(resultado.getInt(3));
-            d.setNacionalidad(resultado.getString(4));
-            d.setDorsal(resultado.getInt(5));
-            d.setDeporte_jugado(resultado.getString(6));
-            d.setEquipo(resultado.getString(7));
-            deportistas.add(d);
-        }
-        return deportistas;
-    } */
-   // public TableView<Deportista> verDeportistas()throws SQLException{
+   
      public void  verDeportistas(ObservableList<Deportista> oldeportistas)throws SQLException{
         TableView<Deportista> tvdeportistas =new TableView<>();
       
@@ -65,21 +46,11 @@ public class DeportistaDAO {
             resultado.getInt(5),
             resultado.getString(6),
             resultado.getString(7));
-         /*  Deportista d = new Deportista();
-            d.setNombre(new SimpleStringProperty(resultado.getString(1)));
-            d.setFecha_nacimiento(new SimpleObjectProperty<>(resultado.getDate(2)));
-            d.setAltura(new SimpleIntegerProperty(resultado.getInt(3)));
-            d.setNacionalidad(new SimpleStringProperty(resultado.getString(4)));
-            d.setDorsal(resultado.getInt(5));
-            d.setDeporte_jugado (resultado.getString(6));
-            d.setEquipo(resultado.getString(7));*/
+         
             System.out.println("d: "+d.toString());
             oldeportistas.add(d);
         }
-       // tvdeportistas.setItems(oldeportistas);
-        
-        //return tvdeportistas;
-       // return oldeportistas;
+      
     }
     public void insertarDeportista(String nombre,Date fecha,int altura,String nacionalidad,int dorsal,String deporte,String equipo) throws SQLException{
           String sql ="call deportistas.InsertarDeportista('"+nombre+"','"+fecha+"',"+altura+
@@ -96,7 +67,7 @@ public class DeportistaDAO {
         ResultSet resultado= sentencia.executeQuery();
     }
     public void modificarDeportista(String nombre,Date fecha,int altura,String nacionalidad,int dorsal,String deporte,String equipo) throws SQLException{
-        String sql ="call deportistas.ModificarDeportista('"+nombre+"','"+fecha+"',"+altura+
+        String sql ="call deportistas.ModificarEquipo('"+nombre+"','"+fecha+"',"+altura+
                 ",'"+nacionalidad+"',"+dorsal+",'"+deporte+"','"+equipo+"');";
         System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
