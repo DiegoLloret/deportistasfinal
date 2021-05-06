@@ -196,6 +196,38 @@ public class SecondaryController {
         }
  
            }
-        } 
+        }
+      @FXML
+   private void presionado() {
+    
+    String nombre= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNombre();
+    fldNombre.setText(nombre);
+    int altura= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getAltura();
+    fldAltura.setText(""+altura);
+    String nacionalidad= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getNacionalidad();
+    fldNacionalidad.setText(nacionalidad);
+    int dorsal= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getDorsal();
+    fldDorsal.setText(""+dorsal);
+    String deporte= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getDeporte_jugado();
+    fldDeporte.setText(deporte);
+    String equipo= oldeportistas.get(tvdeportista1.getSelectionModel().getSelectedIndex()).getEquipo();
+    fldEquipo.setText(equipo);
+    
+    }
+@FXML
+   private void resetear() {
+      
+    fldNombre.setText("");
+    
+    fldAltura.setText("");
+    
+    fldNacionalidad.setText("");
+    
+    fldDorsal.setText("");
+    
+    fldDeporte.setText("");
+    
+    fldEquipo.setText("");
+   }
     }
 
