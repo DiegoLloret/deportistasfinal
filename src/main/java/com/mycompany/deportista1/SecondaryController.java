@@ -16,7 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SecondaryController {
-    @FXML private TableView<Deportista> tvdeportista1;
+    @FXML 
+    private TableView<Deportista> tvdeportista1;
   
     
     @FXML
@@ -66,7 +67,9 @@ public class SecondaryController {
     private TextField fldAltura;
     @FXML
     private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
+       
+               App.setRoot("primary");
+               
     }
      @FXML
     private void showDeportista() throws IOException, SQLException {
@@ -219,9 +222,9 @@ public class SecondaryController {
 @FXML
    private void resetear() {
       
-    fldNombre.setText("");
+    fldNombre.setText(""); 
     
-    
+    fldFecha.setValue(null);
     
     fldAltura.setText("");
     

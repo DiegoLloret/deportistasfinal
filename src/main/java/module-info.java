@@ -7,4 +7,6 @@ module com.mycompany.deportista1 {
     exports com.mycompany.deportista1;
     opens com.mycompany.deportista1.models to javafx.fxml;
     exports com.mycompany.deportista1.models;
+    opens images to javafx.fxml;
+
 }

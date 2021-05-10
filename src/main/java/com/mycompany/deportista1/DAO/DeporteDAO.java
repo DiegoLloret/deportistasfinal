@@ -5,14 +5,17 @@
  */
 package com.mycompany.deportista1.DAO;
 
-import com.mycompany.deportista1.DAO.LeeFichero;
+import com.mycompany.deportista1.App;
 import com.mycompany.deportista1.models.Deporte;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
@@ -23,8 +26,16 @@ import javafx.scene.control.TableView;
 public class DeporteDAO {
     public Connection conn;
     public void conectar() throws ClassNotFoundException, SQLException,IOException {
-     String conex= LeeFichero.leeConexion("C:/trabajo final/conexion.txt");
-        conn=DriverManager.getConnection(conex);
+      Properties configuration = new Properties();
+        configuration.load(new FileInputStream(new File(App.class.getResource("connectionDB.properties").getPath())));
+        String host = configuration.getProperty("host");
+        String port = configuration.getProperty("port");
+        String name = configuration.getProperty("name");
+        String username = configuration.getProperty("username");
+        String password = configuration.getProperty("password");
+
+        conn = DriverManager.getConnection("jdbc:mariadb://" + host + ":" + port + "/" + name + "?serverTimezone=UTC",
+                username, password);
     }
     public void desconectar() throws SQLException{
         conn.close();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" prefHeight="350.0" prefWidth="735.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.deportista1.PrimaryController">
+<VBox alignment="CENTER" prefHeight="590.0" prefWidth="1090.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.deportista1.PrimaryController">
    <children>
       <VBox alignment="CENTER" prefHeight="564.0" prefWidth="876.0" spacing="20.0">
          <children>
@@ -34,6 +35,11 @@
                         </Menu>
                      </menus>
                   </MenuBar>
+                  <ImageView fitHeight="376.0" fitWidth="1007.0" pickOnBounds="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../images/imagen.png" />
+                     </image>
+                  </ImageView>
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
