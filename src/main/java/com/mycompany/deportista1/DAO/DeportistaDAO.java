@@ -78,7 +78,7 @@ public class DeportistaDAO {
         ResultSet resultado= sentencia.executeQuery();
     }
     public void modificarDeportista(String nombre,Date fecha,int altura,String nacionalidad,int dorsal,String deporte,String equipo) throws SQLException{
-        String sql ="call deportistas.ModificarEquipo('"+nombre+"','"+fecha+"',"+altura+
+        String sql ="call deportistas.ModificarDeportista('"+nombre+"','"+fecha+"',"+altura+
                 ",'"+nacionalidad+"',"+dorsal+",'"+deporte+"','"+equipo+"');";
         System.out.println(sql);
         PreparedStatement sentencia =conn.prepareStatement(sql);
